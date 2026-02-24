@@ -13,7 +13,7 @@ export default function Hero() {
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Hi, I'm{" "}
+              Hi, I&apos;m{" "}
               <span className="block mt-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Choun Rathanak</span>
             </h1>
             <p className="text-2xl md:text-3xl text-gray-300">
