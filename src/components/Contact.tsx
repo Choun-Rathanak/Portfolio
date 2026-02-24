@@ -35,7 +35,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your message! I'll get back to you soon.");
+    alert("Thank you for your message! I&apos;ll get back to you soon.");
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -62,7 +62,7 @@ export default function Contact() {
         </h2>
         <div className={`w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4 rounded-full transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}></div>
         <p className={`text-center text-gray-300 mb-12 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          Let's create something amazing together
+          Let&apos;s create something amazing together
         </p>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">

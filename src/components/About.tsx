@@ -61,7 +61,7 @@ export default function About() {
           {/* Intro Text */}
           <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-lg text-gray-300 leading-relaxed">
-              I'm an aspiring frontend developer passionate about creating clean, responsive, and visually 
+              I&apos;m an aspiring frontend developer passionate about creating clean, responsive, and visually 
               appealing websites. I enjoy turning ideas into{" "}
               <span className="font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">functional, interactive experiences</span> using HTML,
               CSS, JavaScript, React, and Tailwind CSS.
