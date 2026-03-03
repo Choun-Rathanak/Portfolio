@@ -49,6 +49,12 @@ export default function Skills() {
       color: "#F7DF1E"
     },
     { 
+      name: "C", 
+      description: "System Programming Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+      color: "#A8B9CC"
+    },
+    { 
       name: "C++", 
       description: "High-Performance Language",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
@@ -59,6 +65,12 @@ export default function Skills() {
       description: "Object-Oriented Language",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       color: "#007396"
+    },
+    { 
+      name: "Python", 
+      description: "Data Manipulation & Analysis",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      color: "#3776AB"
     },
     { 
       name: "C#", 
@@ -85,6 +97,12 @@ export default function Skills() {
       color: "#000000"
     },
     { 
+      name: "Node.js", 
+      description: "Backend Development",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      color: "#339933"
+    },
+    { 
       name: "Tailwind CSS", 
       description: "Utility-First CSS",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
@@ -101,6 +119,12 @@ export default function Skills() {
       description: "Game Engine",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
       color: "#000000"
+    },
+    { 
+      name: "Adobe", 
+      description: "Creative Suite",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
+      color: "#31A8FF"
     },
     { 
       name: "Figma", 
