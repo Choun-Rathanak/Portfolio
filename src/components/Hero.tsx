@@ -54,7 +54,7 @@ export default function Hero() {
                 {/* Image */}
                 <div className="relative aspect-[3/4]">
                   <Image
-                    src="/images/profile.png"
+                    src="/images/profile-hero-new.jpg"
                     alt="Choun Rathanak"
                     fill
                     className="object-cover object-center transition-transform duration-500"

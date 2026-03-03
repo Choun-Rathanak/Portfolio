@@ -61,6 +61,12 @@ export default function Skills() {
       color: "#007396"
     },
     { 
+      name: "C#", 
+      description: "Game Development Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+      color: "#239120"
+    },
+    { 
       name: "MySQL", 
       description: "Relational Database",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
@@ -91,6 +97,12 @@ export default function Skills() {
       color: "#02569B"
     },
     { 
+      name: "Unity", 
+      description: "Game Engine",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
+      color: "#000000"
+    },
+    { 
       name: "Figma", 
       description: "Design Tool",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
@@ -109,10 +121,10 @@ export default function Skills() {
       color: "#181717"
     },
     { 
-      name: "GitLab", 
-      description: "DevOps Platform",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
-      color: "#FC6D26"
+      name: "AWS", 
+      description: "Cloud Platform",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      color: "#FF9900"
     },
   ];
 
@@ -134,7 +146,10 @@ export default function Skills() {
         <h2 className={`text-4xl md:text-5xl font-bold text-center mb-4 text-white transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           TOOLS & STACK
         </h2>
-        <div className={`w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-16 rounded-full transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}></div>
+        <div className={`w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4 rounded-full transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}></div>
+        <p className={`text-center text-gray-300 mb-12 max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          Technologies and tools I leverage to build scalable, performant applications and bring creative ideas to life
+        </p>
 
         <div className="max-w-6xl mx-auto">
           {/* Technology Grid */}

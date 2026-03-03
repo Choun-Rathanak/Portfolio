@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,53 +36,77 @@ export default function Projects() {
       description: "A full-featured e-commerce platform for the Cambodian tech retail market with KHQR payments via Bakong, real-time Telegram notifications, secure JWT authentication, and a robust admin dashboard.",
       technologies: ["React.js", "Node.js", "Express.js", "TypeScript", "MySQL", "Tailwind CSS"],
       role: "Frontend Development & UML Design",
-      image: "🛒",
+      image: "/images/gear tecj.png",
       gradient: "from-blue-500 to-purple-600",
       github: "https://github.com/CPF-CADT/computer-shop.git",
-      live: "https://computer-shop-henna.vercel.app/"
+      live: "https://www.youtube.com/watch?v=ZU_P9FArZj4&t=3s"
     },
     {
-      title: "School Learning Platform",
-      description: "Created an educational platform with clean, accessible interfaces for students and teachers, focusing on usability and engagement.",
-      technologies: ["Next.js", "TypeScript", "Firebase"],
-      role: "Front-end development with mobile-first responsive design",
-      image: "📚",
+      title: "Online Course Platform",
+      description: "E-learning platform for ICT and English courses with user-friendly UI and interactive quiz systems. Features course management, student progress tracking, and engaging learning experiences.",
+      technologies: ["React.js", "Tailwind CSS", "PrimeReact"],
+      role: "Frontend Development",
+      image: "/images/course elearning.png",
       gradient: "from-green-500 to-teal-600",
+      github: "https://github.com/CPF-CADT/e_learning.git",
+      live: "https://elearning-gamma-five.vercel.app/"
     },
     {
       title: "E-Commerce Desktop Application",
       description: "A Java-based e-commerce application with graphical user interface for managing products, orders, and customer interactions in a desktop environment.",
       technologies: ["Java", "Swing/JavaFX", "MySQL"],
       role: "GUI Development & Database Integration",
-      image: "🖥️",
+      image: "/images/e commerce java.jpg?v=2",
       gradient: "from-indigo-500 to-blue-600",
       github: "https://github.com/CPF-CADT/E-Commerce.git"
+    },
+    {
+      title: "No Longer Exist",
+      description: "A 3D first-person horror puzzle game set in a haunted village, where players must evade ghosts, solve puzzles, and find the Egress Door to escape. Features AI-powered NavMesh pathfinding, immersive 3D spatial audio, and atmospheric environment design.",
+      technologies: ["Unity", "C#", "NavMesh AI", "Raycasting", "3D Spatial Audio"],
+      role: "Game Designer & Environment Design",
+      image: "/images/game .png",
+      gradient: "from-red-600 to-gray-900",
+      github: "https://github.com/CPF-CADT/no-longer-exits.git",
+      live: "https://youtu.be/-l3gTQDtOV0"
     },
     {
       title: "EcoMind Game",
       description: "Educational simulation game teaching AI and environmental care to kids. Features no-code AI training gameplay, environmental missions (pollution, deforestation), voice instructions, and Khmer-English language toggle with energy-based strategy mechanics.",
       technologies: ["React", "Vite", "Tailwind CSS"],
-      role: "Game Logic Designer & Frontend Developer",
-      image: "🎮",
+      role: "Storytelling, Game Concept Design & Frontend Development",
+      image: "/images/ecomid.png",
       gradient: "from-green-500 to-emerald-600",
       github: "https://github.com/CPF-CADT/ecomind.git",
       live: "https://ecomind-d9tk.vercel.app/"
     },
     {
-      title: "Restaurant Booking App",
-      description: "Designed a mobile-friendly restaurant reservation system with smooth animations and an elegant, minimalist interface.",
-      technologies: ["Flutter", "Figma", "Firebase"],
-      role: "UI/UX design, prototyping, and mobile app development",
-      image: "🍽️",
+      title: "House Rental Management System",
+      description: "A Flutter-based mobile application for property owners to manage tenants, rental prices, and services. Features comprehensive tenant management, rent tracking, service monitoring, and local data storage for offline access.",
+      technologies: ["Flutter", "Dart", "Local Storage"],
+      role: "UI/UX Design & Flutter Development",
+      image: "/images/tenant management.png",
       gradient: "from-orange-500 to-red-600",
+      github: "https://github.com/PanhaIsMe/final_project_flutter.git"
+    },
+    {
+      title: "VET Website Clone",
+      description: "Cloned the official VET Cambodia website using HTML and CSS for practice. Focused on responsive design, accurate layout replication, and semantic HTML structure.",
+      technologies: ["HTML", "CSS"],
+      role: "UI/UX Design & Frontend Development",
+      image: "/images/vet website image.png",
+      gradient: "from-blue-500 to-cyan-600",
+      github: "https://github.com/CPF-CADT/Web-Design-Project-Clone-VET-Website",
+      live: "https://web-design-project-clone-vet-websit-eight.vercel.app/HTML/home.html"
     },
     {
       title: "Portfolio Website",
       description: "Built a personal portfolio showcasing design work with attention to typography, spacing, and visual hierarchy.",
       technologies: ["Next.js", "Tailwind CSS"],
       role: "Complete design and development with performance optimization",
-      image: "💼",
+      image: "/images/portfolio.png",
       gradient: "from-pink-500 to-purple-600",
+      github: "https://github.com/Choun-Rathanak/Portfolio.git"
     },
   ];
 
@@ -111,10 +136,15 @@ export default function Projects() {
             >
               {/* Project Image/Icon Area */}
               <div className={`relative h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-all duration-300"></div>
-                <span className={`text-8xl transform transition-all duration-500 ${hoveredIndex === index ? 'scale-125 rotate-12' : 'scale-100'}`}>
-                  {project.image}
-                </span>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300"></div>
+                <div className="relative w-full h-full">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 
                 {/* Animated Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
