@@ -56,9 +56,13 @@ export default function Contact() {
         setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setSubmitStatus({ type: 'error', message: data.message || 'Failed to send message. Please try again.' });
+        // Show detailed error for debugging
+        const errorDetails = data.details ? ` (${JSON.stringify(data.details)})` : '';
+        console.error('Contact form error:', data);
+        setSubmitStatus({ type: 'error', message: data.message + errorDetails || 'Failed to send message. Please try again.' });
       }
     } catch (error) {
+      console.error('Contact form catch error:', error);
       setSubmitStatus({ type: 'error', message: 'An error occurred. Please try again later.' });
     } finally {
       setIsSubmitting(false);

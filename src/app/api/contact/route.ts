@@ -8,8 +8,28 @@ export async function POST(request: Request) {
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
     const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '';
 
+    // Enhanced logging for debugging
+    console.log('Environment check:', {
+      hasToken: !!TELEGRAM_BOT_TOKEN,
+      tokenLength: TELEGRAM_BOT_TOKEN.length,
+      hasChatId: !!TELEGRAM_CHAT_ID,
+      chatIdLength: TELEGRAM_CHAT_ID.length,
+      nodeEnv: process.env.NODE_ENV
+    });
+
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-      throw new Error('Telegram credentials not configured');
+      console.error('Missing credentials:', {
+        missingToken: !TELEGRAM_BOT_TOKEN,
+        missingChatId: !TELEGRAM_CHAT_ID
+      });
+      return NextResponse.json(
+        { 
+          success: false, 
+          message: 'Telegram credentials not configured on server',
+          details: 'Environment variables missing'
+        },
+        { status: 500 }
+      );
     }
 
     // Format the message
@@ -46,15 +66,31 @@ _Sent from Portfolio Contact Form_
     console.log('Telegram API Response:', responseData);
 
     if (!response.ok) {
-      console.error('Telegram Error:', responseData);
-      throw new Error(`Telegram API Error: ${responseData.description || 'Unknown error'}`);
+      console.error('Telegram Error Details:', {
+        status: response.status,
+        statusText: response.statusText,
+        error: responseData
+      });
+      return NextResponse.json(
+        { 
+          success: false, 
+          message: `Failed to send message: ${responseData.description || 'Unknown error'}`,
+          details: responseData
+        },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({ success: true, message: 'Message sent successfully!' });
   } catch (error) {
     console.error('Error sending to Telegram:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
-      { success: false, message: 'Failed to send message' },
+      { 
+        success: false, 
+        message: 'Failed to send message',
+        error: errorMessage
+      },
       { status: 500 }
     );
   }

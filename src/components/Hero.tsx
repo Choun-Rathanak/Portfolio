@@ -44,20 +44,20 @@ export default function Hero() {
           </div>
 
           {/* Right Content - Image */}
-          <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="relative max-w-md mx-auto">
+          <div className="relative animate-fade-in flex items-center justify-center" style={{ animationDelay: '0.2s' }}>
+            <div className="relative max-w-xl w-full mx-auto">
               {/* Main image container with gradient background */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-500">
                 {/* Gradient background behind image */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-purple-700"></div>
                 
                 {/* Image */}
-                <div className="relative aspect-[3/4]">
+                <div className="relative aspect-[3/4] flex items-center justify-center">
                   <Image
-                    src="/images/profile-hero-new.jpg"
+                    src="/images/655e2f46-0ab2-478b-bded-39f3dd376f9b-Photoroom.png"
                     alt="Choun Rathanak"
                     fill
-                    className="object-cover object-center transition-transform duration-500"
+                    className="object-contain transition-transform duration-500"
                     priority
                   />
                 </div>
