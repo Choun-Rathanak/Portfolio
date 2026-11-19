@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
@@ -17,21 +16,20 @@ export default function Hero() {
               <span className="block mt-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Choun Rathanak</span>
             </h1>
             <p className="text-2xl md:text-3xl text-gray-300">
-              Aspiring <span className="text-pink-400 font-semibold">Frontend Developer</span>
+              Junior <span className="text-pink-400 font-semibold">Software Developer</span>
             </p>
             <p className="text-lg text-gray-400 italic">Your vision, my code.</p>
             <div className="flex flex-wrap gap-4">
-              <Link
-                href="/projects"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium text-lg px-6 py-3 rounded-lg transition-all duration-300 group hover:shadow-2xl hover:shadow-pink-500/50"
+              <a
+                href="https://github.com/Choun-Rathanak"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium text-lg px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/50"
               >
                 View my work
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+              </a>
               <a
-                href="/Choun-Rathanak-CV.pdf"
+                href="/Choun%20Rathanak%20CV%20Resume.pdf"
                 download
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border-2 border-purple-400 text-white font-medium text-lg px-6 py-3 rounded-lg transition-all duration-300 group hover:shadow-2xl hover:shadow-purple-500/50 backdrop-blur-sm"
               >
@@ -46,21 +44,14 @@ export default function Hero() {
           {/* Right Content - Image */}
           <div className="relative animate-fade-in flex items-center justify-center" style={{ animationDelay: '0.2s' }}>
             <div className="relative max-w-xl w-full mx-auto">
-              {/* Main image container with gradient background */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/30 transform hover:scale-[1.02] transition-all duration-500">
-                {/* Gradient background behind image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-purple-700"></div>
-                
-                {/* Image */}
-                <div className="relative aspect-[3/4] flex items-center justify-center">
-                  <Image
-                    src="/images/655e2f46-0ab2-478b-bded-39f3dd376f9b-Photoroom.png"
-                    alt="Choun Rathanak"
-                    fill
-                    className="object-contain transition-transform duration-500"
-                    priority
-                  />
-                </div>
+              <div className="relative aspect-[3/4] translate-y-16 flex items-center justify-center">
+                <Image
+                  src="/images/profile-transparent.png"
+                  alt="Choun Rathanak"
+                  fill
+                  className="object-contain transition-transform duration-500 hover:scale-[1.02]"
+                  priority
+                />
               </div>
               
               {/* Decorative elements */}

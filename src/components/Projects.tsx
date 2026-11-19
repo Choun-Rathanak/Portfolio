@@ -5,7 +5,6 @@ import Image from "next/image";
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -31,6 +30,15 @@ export default function Projects() {
   }, []);
 
   const projects = [
+    {
+      title: "Domrov LMS Automation",
+      description: "A learning-management and automated evaluation platform for programming courses with AI-powered grading and feedback, role-based dashboards, payment and analytics tools, and a distributed cloud architecture.",
+      technologies: ["NestJS", "Python", "PostgreSQL", "Redis", "AWS EC2", "Cloudflare R2", "gRPC", "Nginx", "Bakong", "RQ"],
+      role: "UX/UI & Front-End Developer",
+      image: "/images/Screenshot%202026-11-19%20231909.png",
+      gradient: "from-violet-500 to-indigo-700",
+      github: "https://github.com/CPF-CADT/domrov-lms-automation.git"
+    },
     {
       title: "Online Marketplace for Tech Products",
       description: "A full-featured e-commerce platform for the Cambodian tech retail market with KHQR payments via Bakong, real-time Telegram notifications, secure JWT authentication, and a robust admin dashboard.",
@@ -90,6 +98,17 @@ export default function Projects() {
       github: "https://github.com/PanhaIsMe/final_project_flutter.git"
     },
     {
+      title: "Velo PP — Bike Sharing App",
+      description: "A Flutter bike-sharing app where riders choose a membership pass, find stations on an interactive map, book available bikes, and manage active rides. Includes Khmer/English localization, mock data, and an optional Cloud Firestore data layer.",
+      technologies: ["Flutter", "Dart", "Provider", "Cloud Firestore", "flutter_map", "Geolocator"],
+      role: "Mobile App Development & UI/UX Implementation",
+      image: "/images/Screenshot%202026-11-19%20223950.png",
+      imageClass: "object-cover object-top",
+      imagePosition: "top",
+      gradient: "from-cyan-500 to-blue-600",
+      github: "https://github.com/CPF-CADT/Velo_PP.git"
+    },
+    {
       title: "VET Website Clone",
       description: "Cloned the official VET Cambodia website using HTML and CSS for practice. Focused on responsive design, accurate layout replication, and semantic HTML structure.",
       technologies: ["HTML", "CSS"],
@@ -131,8 +150,6 @@ export default function Projects() {
               key={index}
               className={`group relative bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-purple-500/50 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${index * 100 + 300}ms` }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Project Image/Icon Area */}
               <div className={`relative h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}>
@@ -142,7 +159,8 @@ export default function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover"
+                    className={project.imageClass ?? "object-cover"}
+                    style={{ objectPosition: project.imagePosition ?? "center" }}
                   />
                 </div>
                 

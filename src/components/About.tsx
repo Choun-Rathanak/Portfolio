@@ -78,10 +78,10 @@ export default function About() {
           {/* Intro Text */}
           <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-lg text-gray-300 leading-relaxed">
-              I&apos;m an aspiring frontend developer passionate about creating clean, responsive, and visually 
-              appealing websites. I enjoy turning ideas into{" "}
-              <span className="font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">functional, interactive experiences</span> using HTML,
-              CSS, JavaScript, React, and Tailwind CSS.
+              I&apos;m an aspiring software developer with practical experience in web and mobile application
+              development. I enjoy turning ideas into{" "}
+              <span className="font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">responsive, user-friendly solutions</span> using Next.js, React, PHP, Laravel,
+              FastAPI, MySQL, and Flutter.
             </p>
           </div>
 
@@ -89,25 +89,25 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className={`bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-2xl p-8 text-center hover:border-purple-500/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} delay-300`}>
-              <h3 className="text-xl font-bold mb-4 text-white mt-4">Clean & Semantic Code</h3>
+              <h3 className="text-xl font-bold mb-4 text-white mt-4">Web & Mobile Development</h3>
               <p className="text-gray-300 leading-relaxed">
-                Writing well-structured, semantic HTML and React components for maintainable code-bases.
+                Building responsive, user-friendly web and mobile applications with Next.js, React, and Flutter.
               </p>
             </div>
 
             {/* Card 2 */}
             <div className={`bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-2xl p-8 text-center hover:border-pink-500/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} delay-400`}>
-              <h3 className="text-xl font-bold mb-4 text-white mt-4">Modern UI Styling</h3>
+              <h3 className="text-xl font-bold mb-4 text-white mt-4">Backend & API Integration</h3>
               <p className="text-gray-300 leading-relaxed">
-                Crafting visually appealing interfaces using Tailwind CSS and responsive design principles.
+                Developing backend features and connecting APIs with PHP, Laravel, FastAPI, and MySQL.
               </p>
             </div>
 
             {/* Card 3 */}
             <div className={`bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-2xl p-8 text-center hover:border-purple-500/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} delay-500`}>
-              <h3 className="text-xl font-bold mb-4 text-white mt-4">Interactive Components</h3>
+              <h3 className="text-xl font-bold mb-4 text-white mt-4">Problem-Solving & Teamwork</h3>
               <p className="text-gray-300 leading-relaxed">
-                Building dynamic, user-friendly components with React and UI libraries.
+                Applying attention to detail, clear communication, and collaboration to deliver quality work.
               </p>
             </div>
           </div>
@@ -117,8 +117,8 @@ export default function About() {
             <h3 className="text-3xl font-bold text-center mb-4 text-white">Work Experience</h3>
             <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8 rounded-full"></div>
             
-            <div className="max-w-5xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-2xl p-8 hover:border-purple-500/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
+            <div className="max-w-5xl mx-auto flex flex-col">
+              <div className="order-2 mt-8 bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-2xl p-8 hover:border-purple-500/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
                 <div className="grid md:grid-cols-2 gap-8 items-start">
                   {/* Featured Work Image Carousel */}
                   <div className="relative rounded-xl overflow-hidden border-2 border-white/10 hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-purple-500/20">
@@ -169,6 +169,31 @@ export default function About() {
                   </div>
                 </div>
               </div>
+
+              <div className="order-1 bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-2xl p-8 hover:border-pink-500/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-500">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                  <div className="relative rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
+                    <Image
+                      src="/images/Screenshot%202026-11-19%20215422.png"
+                      alt="LAOR MEDIA Doctor Digital Marketing Plan System"
+                      width={1365}
+                      height={768}
+                      className="object-cover w-full h-auto"
+                    />
+                  </div>
+
+                  <div>
+                    <h4 className="text-2xl font-bold text-white mb-2">Web Developer Intern</h4>
+                    <p className="text-lg text-pink-400 font-semibold mb-1">LAOR MEDIA</p>
+                    <p className="text-sm text-gray-400 mb-4">Apr 2026 - Jul 2026</p>
+
+                    <p className="text-gray-300 mb-6">
+                      Developed AI-powered recommendations for the Doctor Digital Marketing Plan System using PHP, Laravel, FastAPI, and OpenAI. Integrated the Meta Graph API with MySQL, built service monitoring, and added tools to review, edit, and export reports to PDF and Excel.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -226,6 +251,37 @@ export default function About() {
                       height={400}
                       className="object-cover w-full h-auto"
                     />
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-2xl p-8 hover:border-pink-500/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-500">
+                <h4 className="text-2xl font-bold text-white mb-2">Media Team Volunteer</h4>
+                <p className="text-lg text-pink-400 font-semibold mb-1">CCA Conference</p>
+                <p className="text-sm text-gray-400 mb-4">2026</p>
+
+                <p className="text-gray-300">
+                  Served on the media team, capturing event highlights, audience engagement, professor and speaker sessions, and conference activities to document the experience and support event communications.
+                </p>
+
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
+                    <Image src="/images/cca/DSC08270.jpg" alt="CCA Conference group photo" fill className="object-cover" />
+                  </div>
+                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
+                    <Image src="/images/cca/DSC08486.jpg" alt="CCA Conference speaker session" fill className="object-cover" />
+                  </div>
+                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
+                    <Image src="/images/cca/DSC08739.jpg" alt="CCA Conference audience" fill className="object-cover" />
+                  </div>
+                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
+                    <Image src="/images/cca/DSC08763.jpg" alt="CCA Conference presentation" fill className="object-cover" />
+                  </div>
+                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
+                    <Image src="/images/cca/DSC08921.jpg" alt="CCA Conference activity" fill className="object-cover" />
+                  </div>
+                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
+                    <Image src="/images/cca/DSC08927.jpg" alt="CCA Conference attendees" fill className="object-cover" />
                   </div>
                 </div>
               </div>

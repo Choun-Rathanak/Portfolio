@@ -72,6 +72,12 @@ export default function Skills() {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
       color: "#3776AB"
     },
+    {
+      name: "Dart",
+      description: "Cross-Platform Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg",
+      color: "#0175C2"
+    },
     { 
       name: "C#", 
       description: "Game Development Language",
@@ -101,6 +107,24 @@ export default function Skills() {
       description: "Backend Development",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
       color: "#339933"
+    },
+    {
+      name: "PHP",
+      description: "Server-Side Development",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+      color: "#777BB4"
+    },
+    {
+      name: "Laravel",
+      description: "PHP Web Framework",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+      color: "#FF2D20"
+    },
+    {
+      name: "FastAPI",
+      description: "Python API Framework",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+      color: "#009688"
     },
     { 
       name: "Tailwind CSS", 
@@ -132,6 +156,24 @@ export default function Skills() {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
       color: "#F24E1E"
     },
+    {
+      name: "Machine Learning & AI",
+      description: "Intelligent Application Development",
+      icon: null,
+      color: "#8B5CF6"
+    },
+    {
+      name: "Linux",
+      description: "Operating System",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+      color: "#FCC624"
+    },
+    {
+      name: "Docker",
+      description: "Containerization Platform",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      color: "#2496ED"
+    },
     { 
       name: "Git", 
       description: "Version Control System",
@@ -147,7 +189,7 @@ export default function Skills() {
     { 
       name: "AWS", 
       description: "Cloud Platform",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      icon: null,
       color: "#FF9900"
     },
   ];
@@ -196,12 +238,18 @@ export default function Skills() {
                 <div className="relative flex flex-col items-center text-center space-y-3">
                   {/* Icon */}
                   <div className="w-16 h-16 relative group-hover:scale-110 transition-transform duration-300">
-                    <Image
-                      src={tech.icon}
-                      alt={tech.name}
-                      fill
-                      className="object-contain"
-                    />
+                    {tech.icon ? (
+                      <Image
+                        src={tech.icon}
+                        alt={tech.name}
+                        fill
+                        className="object-contain"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center rounded-xl border border-[#FF9900]/40 bg-[#FF9900]/10 text-2xl font-bold tracking-tight text-[#FF9900]">
+                        {tech.name === "AWS" ? "aws" : "AI"}
+                      </div>
+                    )}
                   </div>
 
                   {/* Name */}
