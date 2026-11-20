@@ -28,7 +28,7 @@ export default function Hero() {
                 View my work
               </Link>
               <a
-                href="/Choun%20Rathanak%20CV%20Resume.pdf"
+                href="/images/Choun%20Rathanak%20CV%20Resume%20(3).pdf"
                 download
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border-2 border-purple-400 text-white font-medium text-lg px-6 py-3 rounded-lg transition-all duration-300 group hover:shadow-2xl hover:shadow-purple-500/50 backdrop-blur-sm"
               >

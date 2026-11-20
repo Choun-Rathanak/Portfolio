@@ -17,7 +17,6 @@ export default function About() {
     { src: "/images/Poster-UMA.png", alt: "UMA Poster Design" }
   ];
   const volunteerImages = [
-    { src: "/images/volunteer1.jpg", alt: "Welcoming guests at PUC event" },
     { src: "/images/volunteer2.jpg", alt: "Food delivery management" },
     { src: "/images/volunteer3.jpg", alt: "Event logistics coordination" },
     { src: "/images/volunteer4.jpg", alt: "Event venue setup" }
