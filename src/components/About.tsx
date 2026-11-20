@@ -112,8 +112,7 @@ export default function About() {
           {/* Intro Text */}
           <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-lg text-gray-300 leading-relaxed">
-              I&apos;m an aspiring software developer with practical experience in web and mobile application
-              development. I enjoy turning ideas into{" "}
+              A fourth-year Bachelor of Computer Science student at CADT, specializing in Software Engineering. I have practical experience in web and mobile application development and enjoy turning ideas into{" "}
               <span className="font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">responsive, user-friendly solutions</span> using Next.js, React, PHP, Laravel,
               FastAPI, MySQL, and Flutter.
             </p>

@@ -82,6 +82,50 @@ body {
   background-size: 1000px 100%;
 }
 
+/* Hero heading types once: greeting first, then the name */
+@keyframes hero-greeting-type-once {
+  from {
+    width: 0;
+  }
+  to {
+    width: 8ch;
+  }
+}
+
+@keyframes hero-name-type-once {
+  from {
+    width: 0;
+  }
+  to {
+    width: 15ch;
+  }
+}
+
+.hero-greeting-type,
+.hero-name-type {
+  display: block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero-greeting-type {
+  animation: hero-greeting-type-once 1.2s steps(8, end) forwards;
+}
+
+.hero-name-type {
+  animation: hero-name-type-once 2s steps(15, end) 1.2s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-greeting-type,
+  .hero-name-type {
+    width: auto;
+    border-right: 0;
+    animation: none;
+  }
+}
+
 /* Scroll Progress Bar */
 .scroll-progress {
   position: fixed;
