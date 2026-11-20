@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <h3 className="text-white text-xl font-bold mb-4">Choun Rathanak</h3>
             <p className="text-sm text-gray-400 mb-4">
-              Web Designer & Front-End Developer creating modern digital experiences.
+              Junior Software Engineer building practical web and mobile solutions.
             </p>
             <div className="flex space-x-3">
               <a
@@ -98,10 +98,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li className="text-sm">UI/UX Design</li>
-              <li className="text-sm">Web Development</li>
-              <li className="text-sm">Responsive Design</li>
               <li className="text-sm">Frontend Development</li>
+              <li className="text-sm">Backend & API Integration</li>
+              <li className="text-sm">Web & Mobile Applications</li>
+              <li className="text-sm">AI-Powered Features</li>
             </ul>
           </div>
 
@@ -126,12 +126,9 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex items-center">
             <p className="text-sm text-gray-400">
               © {new Date().getFullYear()} Choun Rathanak. All rights reserved.
-            </p>
-            <p className="text-sm text-gray-400">
-              Built with Next.js & Tailwind CSS
             </p>
           </div>
         </div>
