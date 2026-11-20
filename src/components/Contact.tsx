@@ -182,7 +182,7 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/no.userrrrhere"
+                  href="https://www.instagram.com/noh.mac/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center hover:from-pink-600 hover:to-purple-700 hover:scale-110 transition-all duration-300 shadow-sm hover:shadow-md text-white"
@@ -193,7 +193,7 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a
-                  href="https://t.me/Goku19z"
+                  href="https://t.me/ChounRathanak"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center hover:from-blue-500 hover:to-blue-600 hover:scale-110 transition-all duration-300 shadow-sm hover:shadow-md text-white"

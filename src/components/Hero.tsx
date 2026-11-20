@@ -1,13 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className="relative bg-gradient-to-br from-gray-900 via-[#1a1a2e] to-gray-900 min-h-[calc(100vh-80px)] flex items-center overflow-hidden">
       {/* Decorative circles - matching the website style */}
-      <div className="absolute top-20 right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+      <div className="pointer-events-none absolute top-20 right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="pointer-events-none absolute bottom-20 left-20 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
 
-      <div className="container mx-auto px-6 py-20">
+      <div className="container relative z-10 mx-auto px-6 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in-up">
@@ -16,18 +17,16 @@ export default function Hero() {
               <span className="block mt-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Choun Rathanak</span>
             </h1>
             <p className="text-2xl md:text-3xl text-gray-300">
-              Junior <span className="text-pink-400 font-semibold">Software Developer</span>
+              Junior <span className="text-pink-400 font-semibold">Software Engineer</span>
             </p>
             <p className="text-lg text-gray-400 italic">Your vision, my code.</p>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="https://github.com/Choun-Rathanak"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/projects"
                 className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium text-lg px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/50"
               >
                 View my work
-              </a>
+              </Link>
               <a
                 href="/Choun%20Rathanak%20CV%20Resume.pdf"
                 download
@@ -46,10 +45,10 @@ export default function Hero() {
             <div className="relative max-w-xl w-full mx-auto">
               <div className="relative aspect-[3/4] translate-y-16 flex items-center justify-center">
                 <Image
-                  src="/images/profile-transparent.png"
+                  src="/images/photo_2026-11-19_22-55-26-Photoroom.png"
                   alt="Choun Rathanak"
                   fill
-                  className="object-contain transition-transform duration-500 hover:scale-[1.02]"
+                  className="object-contain -translate-y-[30%] scale-[1.62] transition-transform duration-500 hover:scale-[1.65]"
                   priority
                 />
               </div>

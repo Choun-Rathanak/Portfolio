@@ -31,6 +31,15 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Smart Traffic Management with YOLO",
+      description: "An AI-powered camera system that detects and counts vehicles at a four-way intersection, then adapts traffic-light timing to current traffic volume.",
+      technologies: ["Python", "YOLOv8", "YOLOv5", "Ultralytics", "OpenCV", "PyQt", "CUDA", "ONNX", "TensorRT", "UA-DETRAC"],
+      role: "Evaluated both object-detection models and visualized the project results.",
+      image: "/bdf97080-3b16-4ebf-9dd7-1bc2f58fd52a.png",
+      gradient: "from-amber-500 to-red-600",
+      github: "https://github.com/CPF-CADT/object-detection-for-traffic-using-yolo.git"
+    },
+    {
       title: "Domrov LMS Automation",
       description: "A learning-management and automated evaluation platform for programming courses with AI-powered grading and feedback, role-based dashboards, payment and analytics tools, and a distributed cloud architecture.",
       technologies: ["NestJS", "Python", "PostgreSQL", "Redis", "AWS EC2", "Cloudflare R2", "gRPC", "Nginx", "Bakong", "RQ"],

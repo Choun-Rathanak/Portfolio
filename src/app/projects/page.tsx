@@ -1,10 +1,16 @@
 import Projects from "@/components/Projects";
+import BackToHome from "@/components/BackToHome";
 
 export const metadata = {
   title: "Projects - Choun Rathanak",
-  description: "Portfolio of web development projects and work",
+  description: "Portfolio of Software Development projects and work",
 };
 
 export default function ProjectsPage() {
-  return <Projects />;
+  return (
+    <>
+      <BackToHome />
+      <Projects />
+    </>
+  );
 }

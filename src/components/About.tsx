@@ -6,12 +6,29 @@ import Image from "next/image";
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentVolunteerImageIndex, setCurrentVolunteerImageIndex] = useState(0);
+  const [currentConferenceImageIndex, setCurrentConferenceImageIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   
   const workImages = [
     { src: "/images/poster.jpg", alt: "Ozempic Poster Design" },
     { src: "/images/poster2.jpg", alt: "Featured Poster Design" },
-    { src: "/images/packaging.jpg", alt: "Packaging Design" }
+    { src: "/images/packaging.jpg", alt: "Packaging Design" },
+    { src: "/images/Poster-UMA.png", alt: "UMA Poster Design" }
+  ];
+  const volunteerImages = [
+    { src: "/images/volunteer1.jpg", alt: "Welcoming guests at PUC event" },
+    { src: "/images/volunteer2.jpg", alt: "Food delivery management" },
+    { src: "/images/volunteer3.jpg", alt: "Event logistics coordination" },
+    { src: "/images/volunteer4.jpg", alt: "Event venue setup" }
+  ];
+  const conferenceImages = [
+    { src: "/images/cca/DSC08270.jpg", alt: "CCA Conference group photo" },
+    { src: "/images/cca/DSC08486.jpg", alt: "CCA Conference speaker session" },
+    { src: "/images/cca/DSC08739.jpg", alt: "CCA Conference audience" },
+    { src: "/images/cca/DSC08763.jpg", alt: "CCA Conference presentation" },
+    { src: "/images/cca/DSC08921.jpg", alt: "CCA Conference activity" },
+    { src: "/images/cca/DSC08927.jpg", alt: "CCA Conference attendees" }
   ];
 
   useEffect(() => {
@@ -44,6 +61,24 @@ export default function About() {
 
     return () => clearInterval(interval);
   }, [workImages.length]);
+
+  // Auto-switch volunteer images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVolunteerImageIndex((prevIndex) => (prevIndex + 1) % volunteerImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [volunteerImages.length]);
+
+  // Auto-switch conference images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentConferenceImageIndex((prevIndex) => (prevIndex + 1) % conferenceImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [conferenceImages.length]);
 
   return (
     <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-900 via-[#1a1a2e] to-gray-900 relative overflow-hidden min-h-screen flex items-center">
@@ -214,43 +249,34 @@ export default function About() {
                   </p>
                 </div>
 
-                {/* Image Grid */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="relative rounded-xl overflow-hidden border-2 border-white/10 hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-purple-500/20">
-                    <Image
-                      src="/images/volunteer1.jpg"
-                      alt="Welcoming guests at PUC event"
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-auto"
-                    />
+                {/* Volunteer Image Carousel */}
+                <div className="relative rounded-xl overflow-hidden border-2 border-white/10 hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-purple-500/20">
+                  <div className="relative aspect-video">
+                    {volunteerImages.map((image, index) => (
+                      <div
+                        key={image.src}
+                        className={`absolute inset-0 transition-opacity duration-1000 ${
+                          index === currentVolunteerImageIndex ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <Image src={image.src} alt={image.alt} fill className="object-cover" />
+                      </div>
+                    ))}
                   </div>
-                  <div className="relative rounded-xl overflow-hidden border-2 border-white/10 hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-purple-500/20">
-                    <Image
-                      src="/images/volunteer2.jpg"
-                      alt="Food delivery management"
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-auto"
-                    />
-                  </div>
-                  <div className="relative rounded-xl overflow-hidden border-2 border-white/10 hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-purple-500/20">
-                    <Image
-                      src="/images/volunteer3.jpg"
-                      alt="Event logistics coordination"
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-auto"
-                    />
-                  </div>
-                  <div className="relative rounded-xl overflow-hidden border-2 border-white/10 hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-purple-500/20">
-                    <Image
-                      src="/images/volunteer4.jpg"
-                      alt="Event venue setup"
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-auto"
-                    />
+
+                  <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                    {volunteerImages.map((image, index) => (
+                      <button
+                        key={image.src}
+                        onClick={() => setCurrentVolunteerImageIndex(index)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          index === currentVolunteerImageIndex
+                            ? "w-6 bg-purple-400"
+                            : "w-2 bg-white/50 hover:bg-white/75"
+                        }`}
+                        aria-label={`Go to volunteer photo ${index + 1}`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -264,24 +290,33 @@ export default function About() {
                   Served on the media team, capturing event highlights, audience engagement, professor and speaker sessions, and conference activities to document the experience and support event communications.
                 </p>
 
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
-                    <Image src="/images/cca/DSC08270.jpg" alt="CCA Conference group photo" fill className="object-cover" />
+                <div className="relative mt-6 overflow-hidden rounded-xl border-2 border-white/10 shadow-lg transition-all duration-300 hover:border-pink-500/50 hover:shadow-pink-500/20">
+                  <div className="relative aspect-video">
+                    {conferenceImages.map((image, index) => (
+                      <div
+                        key={image.src}
+                        className={`absolute inset-0 transition-opacity duration-1000 ${
+                          index === currentConferenceImageIndex ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <Image src={image.src} alt={image.alt} fill className="object-cover" />
+                      </div>
+                    ))}
                   </div>
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
-                    <Image src="/images/cca/DSC08486.jpg" alt="CCA Conference speaker session" fill className="object-cover" />
-                  </div>
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
-                    <Image src="/images/cca/DSC08739.jpg" alt="CCA Conference audience" fill className="object-cover" />
-                  </div>
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
-                    <Image src="/images/cca/DSC08763.jpg" alt="CCA Conference presentation" fill className="object-cover" />
-                  </div>
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
-                    <Image src="/images/cca/DSC08921.jpg" alt="CCA Conference activity" fill className="object-cover" />
-                  </div>
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-white/10 hover:border-pink-500/50 transition-all duration-300 shadow-lg hover:shadow-pink-500/20">
-                    <Image src="/images/cca/DSC08927.jpg" alt="CCA Conference attendees" fill className="object-cover" />
+
+                  <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                    {conferenceImages.map((image, index) => (
+                      <button
+                        key={image.src}
+                        onClick={() => setCurrentConferenceImageIndex(index)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          index === currentConferenceImageIndex
+                            ? "w-6 bg-pink-400"
+                            : "w-2 bg-white/50 hover:bg-white/75"
+                        }`}
+                        aria-label={`Go to conference photo ${index + 1}`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
